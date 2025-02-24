@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import ActiveSubstances from "../components/ActiveSubstances";
-import TimelineTile from "../components/TimeLine";
+import Timeline from "../components/TimeLine";
 
 const LandingPage: React.FC = () => {
   const timelineData = [
@@ -66,16 +66,7 @@ const LandingPage: React.FC = () => {
         </span>
         <div className="hand-picture" />
         <ActiveSubstances />
-        {/* <div className="timeline" style={{ display: "flex", flexWrap: "wrap" }}>
-          {timelineData.map((data, index) => (
-            <TimelineTile
-              key={index}
-              day={data.day}
-              image={data.image}
-              description={data.description}
-            />
-          ))}
-        </div> */}
+        <Timeline />
       </div>
     </div>
   );

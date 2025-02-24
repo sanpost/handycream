@@ -10,7 +10,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Inne style dla tagów code */
 code {
   font-family: "Source Code Pro", Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -19,7 +18,7 @@ code {
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(20, minmax(100px, auto));
+  grid-template-rows: repeat(14, minmax(100px, auto));
   background: #ffffff;
   grid-auto-rows: minmax(200px, auto);
 }
@@ -38,18 +37,18 @@ code {
 }
 
 .rating-container {
-    display: flex;
-    font-size: 1.2rem;
-    padding: 0 0 0 30px;
-    margin-bottom: 0.5rem;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+  padding: 0 0 0 30px;
+  margin-bottom: 0.5rem;
+  justify-content: flex-start;
+  align-items: center;
 
-    p {
-        margin: 0;
-        padding: 0 0 0 10px;
-      }
+  p {
+    margin: 0;
+    padding: 0 0 0 10px;
   }
+}
 
 .subtitle {
   grid-area: 5/2/6/7;
@@ -65,15 +64,15 @@ code {
   background: url("../../public/cream.png") no-repeat center center;
   background-size: cover;
   border-radius: 2cap;
-  margin: 1rem;
+  margin: 0rem 1rem 4rem 1rem;
 }
 
 .hand-picture {
-    grid-column: 2 / 8;
-    grid-row: 7 / 12;
-    background: url("../../public/hand.jpg") no-repeat center center;
-    background-size: cover;
-    border-radius: 2cap;
+  grid-column: 2 / 8;
+  grid-row: 7 / 12;
+  background: url("../../public/hand.jpg") no-repeat center center;
+  background-size: cover;
+  border-radius: 2cap;
 }
 
 .header {
@@ -85,48 +84,93 @@ code {
     font-size: 1.5rem;
     color: #333;
     text-align: center;
-    margin-top: 0.5rem;
-    margin-bottom: -0.5rem;
+    margin: 3rem 0 3rem 0;
   }
 }
 
 .active-substances {
-    grid-column: 7 / -2;
-    grid-row: 8 / 11;
-    padding: 1rem;
-    background-color: #ffffff;
-    border-radius: 2cap;
-    box-shadow: 1px 1px 5px 1px #00000031;
-  
-    h2 {
-      font-size: 1.6rem; 
+  grid-column: 7 / -2;
+  grid-row: 8 / 11;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 2cap;
+  box-shadow: 1px 1px 5px 1px #00000031;
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .substance {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    .substance-name {
       font-weight: 600;
-      color: #333;
-      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      color: #000;
+      margin-bottom: 0rem;
     }
-  
-    .substance {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 1rem;
-      
-      .substance-name {
-        font-weight: 600;
-        font-size: 1.3rem; 
-        color: #000;
-        margin-bottom: 0rem;
-      }
-  
-      .substance-description {
-        font-size: 1.3rem; 
-        color: #666;
-        line-height: 1;
-      }
+
+    .substance-description {
+      font-size: 1.3rem;
+      color: #666;
+      line-height: 1;
     }
   }
-  
-  .timeline {
-    display: grid;
-    grid-column: 1/-1;
-    grid-row: 13/15;
+}
+
+.timeline-container {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-column: 2 / -2;
+  grid-row: 13 / 14;
+  gap: 20px;
+}
+
+.timeline-item {
+  cursor: pointer;
+  transition: all 2s ease-in;
+  text-align: center;
+  grid-column: span 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    align-self: flex-end;
   }
+
+  .timeline-content {
+    align-self: start;
+  }
+
+  &.large {
+    grid-column: span 3;
+
+    .timeline-description {
+      display: block;
+    }
+  }
+
+  &.small {
+    grid-column: span 2;
+
+    .timeline-description {
+      display: none;
+    }
+  }
+
+  &.active {
+    grid-column: span 3;
+
+    .timeline-description {
+      display: block;
+    }
+  }
+}
