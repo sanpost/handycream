@@ -43,6 +43,14 @@ const LandingPage: React.FC = () => {
       <div className="container">
         <div className="start-picture" />
         <span className="title">
+          <div className="rating-container">
+            <i className="bi bi-star-fill"></i>
+            <i className="bi bi-star-fill"></i>
+            <i className="bi bi-star-fill"></i>
+            <i className="bi bi-star-fill"></i>
+            <i className="bi bi-star-half"></i>
+            <p> + 1,234 cream fans </p>
+          </div>
           <p>
             <strong> Twoje dłonie </strong> zasługują
           </p>

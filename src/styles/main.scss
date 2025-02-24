@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 
 body {
   margin: 0;
@@ -26,7 +27,7 @@ code {
 .title {
   font-size: 2.5rem;
   color: #fff;
-  grid-area: 4 / 1 / 5 / 8;
+  grid-area: 4 / 2 / 5 / 8;
   display: flex;
   flex-direction: column;
 
@@ -36,12 +37,26 @@ code {
   }
 }
 
+.rating-container {
+    display: flex;
+    font-size: 1.2rem;
+    padding: 0 0 0 30px;
+    margin-bottom: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+
+    p {
+        margin: 0;
+        padding: 0 0 0 10px;
+      }
+  }
+
 .subtitle {
-  grid-area: 5/1/6/7;
+  grid-area: 5/2/6/7;
   font-size: 1.3rem;
   color: #fff;
   max-width: 600px;
-  margin: 10px 0 0 30px;
+  margin: 15px 0 0 30px;
 }
 
 .start-picture {
@@ -84,7 +99,7 @@ code {
     box-shadow: 1px 1px 5px 1px #00000031;
   
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.6rem; 
       font-weight: 600;
       color: #333;
       margin-bottom: 1rem;
@@ -97,13 +112,13 @@ code {
       
       .substance-name {
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 1.3rem; 
         color: #000;
         margin-bottom: 0rem;
       }
   
       .substance-description {
-        font-size: 1rem;
+        font-size: 1.3rem; 
         color: #666;
         line-height: 1;
       }
