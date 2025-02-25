@@ -137,25 +137,54 @@ code {
   text-align: center;
   grid-column: span 2;
   display: grid;
-  grid-template-rows: 1fr 1fr;
   align-items: center;
+  grid-template-rows: 1fr 0.7fr;
 
   img {
     width: 100%;
     border-radius: 10px;
     align-self: flex-end;
+    grid-row: span 1;
+    filter: brightness(0.7);
+
+    &:hover {
+      filter: brightness(1);
+    }
+
   }
 
   .timeline-content {
     align-self: start;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+
+    h3, h4, p {
+      margin: 0.5rem;
+    }
+    
+    h3 {
+      font-size: 2rem;
+      color: #555;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      font-size: 1rem;
+      color: #666;
+    }
   }
 
   &.large {
     grid-column: span 3;
+    img {
+      filter: brightness(1);
+    }
 
     .timeline-description {
       display: block;
     }
+
   }
 
   &.small {
@@ -169,8 +198,54 @@ code {
   &.active {
     grid-column: span 3;
 
+    img {
+      filter: brightness(1);
+    }
+
     .timeline-description {
       display: block;
     }
+
+  }
+}
+
+.handycream-table {
+  display: grid;
+  grid-column: 2 / -2;
+  grid-row: 15 / span 1;
+  gap: 10px;
+  font-family: "Arial", sans-serif;
+
+  .table-header, .table-row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 2fr;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table-header {
+    font-weight: bold;
+    justify-content: center;
+  }
+
+  .table-row {
+    &:nth-child(even) {
+      background: #fafafa;
+    }
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .check {
+    color: #373737;
+  }
+
+  .cross {
+    color: #838383;
   }
 }
