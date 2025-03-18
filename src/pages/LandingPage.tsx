@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import ActiveSubstances from "../components/ActiveSubstances";
 import Timeline from "../components/TimeLine";
 import AdvantagesTable from "../components/AdvantagesTable";
+import ReviewsSection from "../components/ReviewsSection";
+import ProductPurchase from "../components/PurchaseOption";
 
 const LandingPage: React.FC = () => {
   return (
@@ -36,6 +38,8 @@ const LandingPage: React.FC = () => {
         <ActiveSubstances />
         <Timeline />
         <AdvantagesTable />
+        <ReviewsSection />
+        <ProductPurchase />
       </div>
     </div>
   );

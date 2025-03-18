@@ -40,25 +40,21 @@ const timelineData = [
 ];
 
 const Timeline: React.FC = () => {
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number>(0); // Domyślnie pierwszy element
 
   return (
     <div className="timeline-container">
       {timelineData.map((item, index) => (
         <div
           key={index}
-          className={`timeline-item 
-            ${index === 0 ? (selected !== null ? "small" : "large") : ""} 
-            ${selected === index ? "active" : ""}`}
-          onClick={() => setSelected(index === selected ? null : index)}
+          className={`timeline-item ${index === selected ? "large" : "small"}`}
+          onClick={() => setSelected(index)}
         >
           <img src={item.image} alt={item.title} className="timeline-image" />
           <div className="timeline-content">
             <h3>{item.day}</h3>
             <h4>{item.title}</h4>
-            {(index === 0 && selected === null) || selected === index ? (
-              <p className="timeline-description">{item.description}</p>
-            ) : null}
+            {index === selected && <p className="timeline-description">{item.description}</p>}
           </div>
         </div>
       ))}
@@ -67,3 +63,4 @@ const Timeline: React.FC = () => {
 };
 
 export default Timeline;
+
