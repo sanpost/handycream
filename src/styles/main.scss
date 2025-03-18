@@ -127,19 +127,24 @@ code {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-column: 2 / -2;
-  grid-row: 15 / span 1;
+  grid-row: 14 / span 2;
   gap: 20px;
   position: relative;
   margin-bottom: 2rem;
+  min-height: 500px; 
+  height: 600px; 
 }
 
 .timeline-item {
   cursor: pointer;
   text-align: center;
-  grid-column: 1 / span 2;
+  grid-column: span 2;
   display: grid;
   align-items: center;
   grid-template-rows: 1fr 0.7fr;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  position: relative; 
 
   img {
     width: 100%;
@@ -147,9 +152,10 @@ code {
     align-self: flex-end;
     grid-row: span 1;
     filter: brightness(0.7);
+    transition: filter 0.4s ease, transform 0.5s ease;
 
     &:hover {
-      filter: brightness(1);
+      filter: brightness(0.9);
     }
   }
 
@@ -158,11 +164,14 @@ code {
     grid-row: span 1;
     display: flex;
     flex-direction: column;
+    transition: all 0.4s ease;
+    position: relative;
 
     h3,
     h4,
     p {
       margin: 0.5rem;
+      transition: opacity 0.3s ease, transform 0.4s ease;
     }
 
     h3 {
@@ -175,24 +184,45 @@ code {
       font-size: 1rem;
       color: #666;
     }
+
+    .timeline-description {
+      position: absolute; 
+      top: 100%; 
+      left: 0;
+      right: 0;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.4s ease;
+    }
   }
 
   &.large {
     grid-column: span 3;
+    z-index: 2;
+    
     img {
       filter: brightness(1);
+      transform: scale(1.00);
+      border-radius: 1rem;
     }
 
-    .timeline-description {
-      display: block;
+    .timeline-content {
+      .timeline-description {
+        max-height: 200px; // Dostosuj do rzeczywistej maksymalnej wysokości opisu
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 
   &.small {
     grid-column: span 2;
-
-    .timeline-description {
-      display: none;
+    z-index: 1;
+    border-radius: 1rem;
+    
+    &:hover {
+      transform: translateY(-5px);
     }
   }
 }
@@ -254,7 +284,7 @@ code {
     .table-header {
       font-weight: bold;
       text-align: left;
-      color: #727272;
+      color: #000000;
     }
 
     .explanation {
@@ -267,7 +297,7 @@ code {
     }
 
     .competitor {
-      color: #838383;
+      color: #5a5a5a;
       text-align: center;
     }
 

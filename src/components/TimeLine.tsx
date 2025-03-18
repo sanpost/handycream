@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 
+// Interfejs dla danych timeline
+interface TimelineItem {
+  day: string;
+  title: string;
+  image: string;
+  description: string;
+}
+
 // Dane do timeline
-const timelineData = [
+const timelineData: TimelineItem[] = [
   {
     day: "Dzień 1",
     title: "Pierwsze wrażenie",
@@ -54,7 +62,7 @@ const Timeline: React.FC = () => {
           <div className="timeline-content">
             <h3>{item.day}</h3>
             <h4>{item.title}</h4>
-            {index === selected && <p className="timeline-description">{item.description}</p>}
+            <p className="timeline-description">{item.description}</p>
           </div>
         </div>
       ))}
@@ -63,4 +71,3 @@ const Timeline: React.FC = () => {
 };
 
 export default Timeline;
-
